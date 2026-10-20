@@ -1,4 +1,5 @@
 name: metro-stalker
+
 services:
   postgres:
     image: postgres:16.15
@@ -17,5 +18,20 @@ services:
       retries: 10
     restart: unless-stopped
 
+  superset:
+    build: ./superset
+    image: metro-stalker-superset:6.1.0
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
+    ports:
+      - "8089:8088"
+    volumes:
+      - superset_home:/app/superset_home
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
 volumes:
   pgdata:
+  superset_home:
