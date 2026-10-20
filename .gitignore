@@ -1,0 +1,18 @@
+# Секрети — ніколи в Git
+.env
+.dlt/secrets.toml
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# dbt: службові папки
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+
+# Особисті робочі нотатки — не для публічного репо
+MENTORING_GUIDE.md
+PROJECT_BRIEF.md
+SESSION_BACKUP_*.md
