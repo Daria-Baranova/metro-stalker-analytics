@@ -1,0 +1,7 @@
+dbt-core==1.12.5
+dbt-postgres==1.11.0
+dlt[postgres]==1.30.0
+pandas==3.0.5
+requests==2.34.2
+tqdm==4.70.1
+vaderSentiment==3.3.2
