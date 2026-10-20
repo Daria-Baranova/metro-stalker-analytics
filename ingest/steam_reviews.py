@@ -1,68 +1,103 @@
 """Інжест відгуків Steam у bronze.steam_reviews."""
 import json
+import time
 
 import dlt
-from dlt.sources.helpers import requests  # requests з повторами при 429
+from dlt.sources.helpers import requests
 
 from ingest.common import postgres_destination
 
 API_URL = "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/"
+DAY = 86400
+CFG = "sources.steam_reviews."
+
+
+def to_row(review, appid):
+    author = review["author"]
+    return {
+        "recommendationid": review["recommendationid"],
+        "appid": appid,
+        "language": review["language"],
+        "review": review["review"].replace("\x00", ""),  # Postgres не приймає символ NUL
+        "voted_up": review["voted_up"],
+        "timestamp_created": review["timestamp_created"],
+        "timestamp_updated": review["timestamp_updated"],
+        "author_steamid": author["steamid"],
+        "author_num_reviews": author["num_reviews"],
+        "author_playtime_at_review": author.get("playtime_at_review"),
+    }
 
 
 def fetch_reviews(appid, language, start, end):
-    """Віддає відгуки сторінка за сторінкою, поки вони є."""
-    cursor = "*"  # "*" = перша сторінка
+    cursor = "*"
     while True:
         params = {
             "appid": appid,
             "num_per_page": 100,
             "languages": [language],
-            "filter": 1,  # Recent
+            "filter": 1,
             "cursor": cursor,
             "date_range_start": start,
             "date_range_end": end,
         }
-        # timeout і повтори беруться з [runtime] у config.toml
         response = requests.get(API_URL, params={"input_json": json.dumps(params)})
         data = response.json()["response"]
-
         reviews = data.get("reviews", [])
-        if not reviews:  # порожня сторінка = кінець
+        if not reviews:
             break
+        yield [to_row(review, appid) for review in reviews]
+        cursor = data["cursor"]
 
-        for review in reviews:
-            review["appid"] = appid  # API не повертає appid — додаємо самі
-        yield reviews
 
-        cursor = data["cursor"]  # закладка на наступну сторінку
+def windows(start, end, chunk_days):
+    step = chunk_days * DAY
+    for chunk_start in range(start, end, step):
+        yield chunk_start, min(chunk_start + step, end)
 
 
 def reviews_resource(appid, language, start, end):
-
     @dlt.resource(
-        name=f"reviews_{appid}_{language}_{start}",  # унікальне ім'я = свій стан
-        table_name="steam_reviews",                   # усі пишуть в одну таблицю
-        write_disposition="merge",                    # без дублів
+        name=f"reviews_{appid}_{language}_{start}",
+        table_name="steam_reviews",
+        write_disposition="merge",
         primary_key="recommendationid",
+        parallelized=True,
     )
-    def _reviews(
-        created=dlt.sources.incremental("timestamp_created", initial_value=start)
-    ):
-        # Перший запуск: від start. Повторний: від останнього завантаженого
+    def _reviews(created=dlt.sources.incremental("timestamp_created", initial_value=start)):
         yield from fetch_reviews(appid, language, created.last_value, end)
 
     return _reviews
 
 
-if __name__ == "__main__":
-    start = dlt.config["sources.steam_reviews.base_start"]
-    end = dlt.config["sources.steam_reviews.date_range_end"]
+@dlt.source(
+    name="steam_reviews",
+    schema_contract={"tables": "evolve", "columns": "freeze", "data_type": "freeze"},
+)
+def steam_reviews_source():
+    languages = dlt.config[CFG + "languages"]
+    end = dlt.config[CFG + "date_range_end"]
+    chunk_days = dlt.config[CFG + "chunk_days"]
+    resources = []
 
+    for appid in dlt.config[CFG + "base_appids"]:
+        for chunk_start, chunk_end in windows(dlt.config[CFG + "base_start"], end, chunk_days):
+            for language in languages:
+                resources.append(reviews_resource(appid, language, chunk_start, chunk_end))
+
+    for appid in dlt.config[CFG + "metro_appids"]:
+        for language in languages:
+            resources.append(reviews_resource(appid, language, dlt.config[CFG + "metro_start"], end))
+
+    return resources
+
+
+if __name__ == "__main__":
     pipeline = dlt.pipeline(
         pipeline_name="steam_reviews",
         destination=postgres_destination(),
-        dataset_name="bronze",  # схема в Postgres
+        dataset_name="bronze",
+        progress="log",
     )
-
-    # Тест: Far Cry 5, italian (~133 відгуки, 2 сторінки)
-    print(pipeline.run(reviews_resource(552520, "italian", start, end)))
+    started = time.perf_counter()
+    print(pipeline.run(steam_reviews_source()))
+    print(f"Тривалість: {(time.perf_counter() - started) / 60:.1f} хв")
