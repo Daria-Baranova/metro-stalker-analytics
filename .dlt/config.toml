@@ -1,0 +1,22 @@
+# Скільки потоків качають одночасно
+[extract]
+workers = 8
+
+# Налаштування інжесту відгуків Steam (без секретів)
+[sources.steam_reviews]
+languages = ["english", "ukrainian", "german", "french", "spanish", "italian", "polish"]
+
+# Кінець вікна для ВСІХ ігор: 19.10.2026 00:00 UTC
+date_range_end = 1792368000
+
+# S.T.A.L.K.E.R. 2 і Far Cry 5: з 20.11.2024 00:00 UTC
+base_appids = [1643320, 552520]
+base_start = 1732060800
+
+# Metro Exodus, 2033 Redux, Last Light Redux: усі відгуки
+# 1, а не 0: 0 вимикає фільтр дат і бере відгуки після кінця вікна
+metro_appids = [412020, 286690, 287390]
+metro_start = 1
+
+# Ділимо вікно на шматки по N днів (кожен шматок — окремий потік)
+chunk_days = 30
