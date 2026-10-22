@@ -27,3 +27,7 @@ request_max_attempts = 8       # скільки разів пробувати
 request_backoff_factor = 1     # пауза 1, 2, 4, 8... с
 request_max_retry_delay = 60   # не чекати довше 60 с
 request_timeout = 30           # чекати відповідь до 30 с
+
+[sources.steam_appdetails]
+appids = [1643320, 552520, 412020, 286690, 287390, 2590240]
+country = "us"
