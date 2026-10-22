@@ -15,3 +15,6 @@ def postgres_destination():
         "password": os.environ["POSTGRES_PASSWORD"],
     }
     return dlt.destinations.postgres(credentials=credentials)
+
+
+FREEZE_CONTRACT = {"tables": "evolve", "columns": "freeze", "data_type": "freeze"}

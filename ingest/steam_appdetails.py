@@ -4,12 +4,12 @@ from datetime import datetime, timezone
 import dlt
 from dlt.sources.helpers import requests
 
-from ingest.common import postgres_destination
+from ingest.common import FREEZE_CONTRACT, postgres_destination
 
 STEAM_URL = "https://store.steampowered.com/api/appdetails"
 NBU_URL = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange"
 CFG = "sources.steam_appdetails."
-CONTRACT = {"tables": "evolve", "columns": "freeze", "data_type": "freeze"}
+
 
 APPDETAILS_COLUMNS = {
     "appid": {"data_type": "bigint", "nullable": False},
@@ -55,7 +55,7 @@ def to_row(appid, country, data, loaded_at):
     name="steam_appdetails",
     write_disposition="replace",
     columns=APPDETAILS_COLUMNS,
-    schema_contract=CONTRACT,
+    schema_contract=FREEZE_CONTRACT,
 )
 def steam_appdetails():
     loaded_at = datetime.now(timezone.utc)
@@ -80,7 +80,7 @@ def steam_appdetails():
     write_disposition="merge",
     primary_key=["currency", "rate_date"],
     columns=NBU_COLUMNS,
-    schema_contract=CONTRACT,
+    schema_contract=FREEZE_CONTRACT,
 )
 def nbu_rates():
     loaded_at = datetime.now(timezone.utc)

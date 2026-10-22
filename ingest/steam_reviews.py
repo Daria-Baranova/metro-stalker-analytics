@@ -5,7 +5,7 @@ import time
 import dlt
 from dlt.sources.helpers import requests
 
-from ingest.common import postgres_destination
+from ingest.common import FREEZE_CONTRACT, postgres_destination
 
 API_URL = "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/"
 DAY = 86400
@@ -71,7 +71,7 @@ def reviews_resource(appid, language, start, end):
 
 @dlt.source(
     name="steam_reviews",
-    schema_contract={"tables": "evolve", "columns": "freeze", "data_type": "freeze"},
+    schema_contract=FREEZE_CONTRACT,
 )
 def steam_reviews_source():
     languages = dlt.config[CFG + "languages"]
