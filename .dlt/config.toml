@@ -30,4 +30,7 @@ request_timeout = 30           # чекати відповідь до 30 с
 
 [sources.steam_appdetails]
 appids = [1643320, 552520, 412020, 286690, 287390, 2590240]
-country = "us"
+countries = ["us", "ua"]
+
+[sources.nbu_rates]
+currency = "USD"
