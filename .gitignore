@@ -16,3 +16,6 @@ dbt/logs/
 MENTORING_GUIDE.md
 PROJECT_BRIEF.md
 SESSION_BACKUP_*.md
+
+# Логи запусків
+logs/
