@@ -1,0 +1,28 @@
+name: metro_stalker
+version: "1.0.0"
+profile: metro_stalker
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # Межа даних (не включно): 19.10.2026 00:00 UTC — як date_range_end у dlt
+  analysis_end_date: "2026-10-19"
+
+models:
+  metro_stalker:
+    silver:
+      +schema: silver
+      +materialized: view
+    gold:
+      +schema: gold
+      +materialized: table
+
+seeds:
+  metro_stalker:
+    +schema: seeds
