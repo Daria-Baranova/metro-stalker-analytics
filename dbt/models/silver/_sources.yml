@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    description: Сирі дані від dlt. Час — unix-секунди або UTC.
+    tables:
+      - name: steam_reviews
+        description: Відгуки Steam, 5 ігор × 7 мов, вікно дат з .dlt/config.toml. Один рядок = один відгук.
+        config:
+          freshness: null  # вікно дат зафіксоване, нових даних не чекаємо
+        columns:
+          - name: recommendationid
+            description: ID відгуку в Steam.
+            data_tests: [unique, not_null]
+
+      - name: steam_appdetails
+        description: Поточні ціни 6 ігор у США і Україні. Перезаписується при кожному запуску.
+        config:
+          loaded_at_field: loaded_at
+          freshness:
+            warn_after: {count: 2, period: day}
+            error_after: {count: 7, period: day}
+
+      - name: nbu_rates
+        description: Курс НБУ — гривень за 1 одиницю валюти, історія за датами.
+        config:
+          loaded_at_field: loaded_at
+          freshness:
+            warn_after: {count: 2, period: day}
+            error_after: {count: 7, period: day}
+
+      - name: youtube_comments
+        description: Коментарі верхнього рівня до 3 трейлерів METRO 2039.
+        config:
+          loaded_at_field: "to_timestamp(_dlt_load_id::numeric)"
+          freshness:
+            warn_after: {count: 2, period: day}
+            error_after: {count: 7, period: day}
+        columns:
+          - name: comment_id
+            description: ID коментаря в YouTube.
+            data_tests: [unique, not_null]
