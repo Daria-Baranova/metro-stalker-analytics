@@ -18,8 +18,8 @@ select
     prices.coming_soon,
     prices.release_date as release_date_text,
     prices.currency,
-    prices.price_initial / 100.0 as price_initial_local,
-    prices.price_final / 100.0 as price_final_local,
+    (prices.price_initial / 100.0)::numeric(10, 2) as price_initial_local,
+    (prices.price_final / 100.0)::numeric(10, 2) as price_final_local,
     prices.discount_percent,
     round(
         case prices.currency
