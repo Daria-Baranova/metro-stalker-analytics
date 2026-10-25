@@ -32,3 +32,40 @@ models:
       - name: created_at_utc
         description: Час створення відгуку, UTC.
         data_tests: [not_null]
+  
+  - name: stg_prices
+    description: >
+      Поточні ціни 6 ігор у США і Україні. Ціни в одиницях валюти (не центах).
+      price_final_usd — за останнім відомим курсом НБУ.
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "appid || '-' || country"
+    columns:
+      - name: country
+        description: Країна магазину Steam.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["us", "ua"]
+      - name: currency
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["USD", "UAH"]
+      - name: price_final_usd
+        description: Ціна зі знижкою в доларах США.
+        data_tests: [not_null]
+
+  - name: stg_comments
+    description: Коментарі до трейлерів METRO 2039 до analysis_end_date. Час — UTC.
+    columns:
+      - name: comment_id
+        data_tests: [unique, not_null]
+      - name: video_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('videos')
+                field: video_id
