@@ -1,0 +1,12 @@
+snapshots:
+  - name: snap_game_prices
+    description: Історія цін 6 ігор у США і Україні (SCD2). Grain — версія ціни гри × країни.
+    relation: ref('stg_prices')
+    config:
+      schema: snapshots
+      unique_key: [appid, country]
+      strategy: check
+      check_cols: [price_initial_local, price_final_local, discount_percent]
+    columns:
+      - name: dbt_scd_id
+        data_tests: [unique, not_null]
