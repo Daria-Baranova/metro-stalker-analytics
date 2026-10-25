@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: dim_language
+    description: Вимір мов (сегментів). Grain — одна мова Steam.
+    columns:
+      - name: language
+        data_tests: [unique, not_null]
+      - name: is_eu5
+        description: true = входить у запасний рядок «5 мов ЄС».
+
+  - name: dim_games
+    description: Вимір ігор. Grain — одна гра Steam.
+    columns:
+      - name: appid
+        data_tests: [unique, not_null]
+      - name: role
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["base", "control", "metro", "target"]
+
+  - name: dim_date
+    description: Календар від першого відгуку до analysis_end_date. Grain — один день.
+    columns:
+      - name: date_day
+        data_tests: [unique, not_null]
+  
+  - name: dim_players
+    description: Вимір гравців (хеш steamid). Grain — один гравець.
+    columns:
+      - name: player_id
+        data_tests: [unique, not_null]
+      - name: num_reviews
+        description: Скільки відгуків гравець має в Steam (max серед його відгуків).
+      - name: activity_group
+        description: Група активності для перевірки стійкості.
+        data_tests: [not_null]
+
+  - name: fct_reviews
+    description: Факт відгуків, лише 7 мов сегментів. Grain — один відгук = гравець × гра.
+    columns:
+      - name: review_id
+        data_tests: [unique, not_null]
+      - name: player_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_players')
+                field: player_id
+      - name: appid
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_games')
+                field: appid
+      - name: language
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_language')
+                field: language
+      - name: created_date
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_day

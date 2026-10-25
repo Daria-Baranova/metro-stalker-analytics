@@ -18,7 +18,14 @@ models:
                 values: [1643320, 552520, 412020, 286690, 287390]
       - name: language
         description: Мова клієнта Steam автора = сегмент.
-        data_tests: [not_null]
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('languages')
+                field: language
+              config:
+                severity: warn
       - name: player_id
         description: sha256(steamid + сіль). Справжній steamid далі не йде.
         data_tests: [not_null]
