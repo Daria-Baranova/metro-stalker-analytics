@@ -43,6 +43,64 @@ models:
         data_tests: [unique, not_null]
       - name: delta_pp
         description: Різниця задоволеності, п.п. ≥ −5 = «сподобалась не гірше» (умова B).
+  
+  - name: int_audience
+    description: M8 — гравці S.T.A.L.K.E.R. 2 (S⁺), які ще не грали в Metro. Grain — сегмент.
+    columns:
+      - name: segment
+        data_tests: [unique, not_null]
+
+  - name: mart_decision
+    description: >
+      Таблиця рішень за docs/decision_rule.md. Grain — сегмент (7 мов + «5 мов ЄС»).
+      label — мітка сегмента; action — дія з урахуванням «Мало даних» і сценарію english.
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: segment
+        data_type: text
+        data_tests: [unique, not_null]
+      - name: label
+        data_type: text
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["Так", "Тестово", "Ні", "Мало даних"]
+      - name: action
+        data_type: text
+        data_tests: [not_null]
+      - name: reason
+        data_type: text
+      - name: priority
+        data_type: integer
+      - name: lift
+        data_type: numeric(10, 4)
+      - name: lift_ci_low
+        data_type: numeric(10, 4)
+      - name: lift_ci_high
+        data_type: numeric(10, 4)
+      - name: z
+        data_type: numeric(10, 4)
+      - name: p_value
+        data_type: numeric(10, 6)
+      - name: delta_pp
+        data_type: numeric(10, 2)
+      - name: delta_pp_ci_low
+        data_type: numeric(10, 2)
+      - name: delta_pp_ci_high
+        data_type: numeric(10, 2)
+      - name: audience_not_played
+        description: M8 — скільки гравців S.T.A.L.K.E.R. 2 ще не грали в Metro.
+        data_type: bigint
+      - name: n_s
+        data_type: bigint
+      - name: n_f
+        data_type: bigint
+      - name: n_c
+        data_type: bigint
+      - name: n_o
+        data_type: bigint
 
 unit_tests:
   - name: mart_overlap_formulas
