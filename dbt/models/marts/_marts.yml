@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: int_overlap_counts
+    description: >
+      Кількості для питання 1. Grain — сегмент × група активності.
+      n_s / x_s — гравці S.T.A.L.K.E.R. 2 без Far Cry 5 / з них грали в Metro.
+      n_f / x_f — те саме для Far Cry 5 без S.T.A.L.K.E.R. 2.
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "segment || '-' || activity_group"
+
+  - name: mart_overlap
+    description: >
+      Питання 1: чи гравці S.T.A.L.K.E.R. 2 частіше грали в Metro, ніж гравці Far Cry 5.
+      Частки, 95% CI, lift з CI, z-тест, p-value. Grain — сегмент × група активності.
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "segment || '-' || activity_group"
+    columns:
+      - name: lift
+        description: p_s / p_f. 2.0 = удвічі частіше за норму.
+      - name: z
+        description: z-тест двох часток. |z| ≥ 2.69 — різниця не випадкова (Бонферроні).
+
+unit_tests:
+  - name: mart_overlap_formulas
+    description: Формули CI, lift, z і p-value на відомих числах (пораховано окремо в Python).
+    model: mart_overlap
+    given:
+      - input: ref('int_overlap_counts')
+        rows:
+          - {segment: lift_2, activity_group: all, n_s: 1000, x_s: 200, n_f: 1000, x_f: 100}
+          - {segment: equal, activity_group: all, n_s: 500, x_s: 50, n_f: 500, x_f: 50}
+          - {segment: empty, activity_group: all, n_s: 0, x_s: 0, n_f: 100, x_f: 10}
+    expect:
+      rows:
+        - {segment: lift_2, p_s: 0.2, p_s_ci_low: 0.1752, p_s_ci_high: 0.2248,
+           p_f: 0.1, p_f_ci_low: 0.0814, p_f_ci_high: 0.1186,
+           lift: 2.0, lift_ci_low: 1.5995, lift_ci_high: 2.5008,
+           z: 6.2622, p_value: 0.0}
+        - {segment: equal, p_s: 0.1, p_s_ci_low: 0.0737, p_s_ci_high: 0.1263,
+           p_f: 0.1, p_f_ci_low: 0.0737, p_f_ci_high: 0.1263,
+           lift: 1.0, lift_ci_low: 0.6894, lift_ci_high: 1.4505,
+           z: 0.0, p_value: 1.0}
+        - {segment: empty, p_s: null, p_s_ci_low: null, p_s_ci_high: null,
+           p_f: 0.1, p_f_ci_low: 0.0412, p_f_ci_high: 0.1588,
+           lift: null, lift_ci_low: null, lift_ci_high: null,
+           z: null, p_value: null}
