@@ -8,10 +8,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 LOG_FILE = ROOT / "logs" / "run_all.log"
 
+DBT = str(Path(sys.executable).with_name("dbt"))
+DBT_DIR = ROOT / "dbt"
+
 STEPS = [
-    ("Відгуки Steam", [sys.executable, "-m", "ingest.steam_reviews"]),
-    ("Ціни Steam і курс НБУ", [sys.executable, "-m", "ingest.steam_appdetails"]),
-    ("Коментарі YouTube", [sys.executable, "-m", "ingest.youtube_comments"]),
+    ("Відгуки Steam", [sys.executable, "-m", "ingest.steam_reviews"], ROOT),
+    ("Ціни Steam і курс НБУ", [sys.executable, "-m", "ingest.steam_appdetails"], ROOT),
+    ("Коментарі YouTube", [sys.executable, "-m", "ingest.youtube_comments"], ROOT),
+    ("dbt: свіжість джерел", [DBT, "source", "freshness", "--target", "prod"], DBT_DIR),
+    ("dbt: build prod", [DBT, "build", "--target", "prod"], DBT_DIR),
+    ("Експорт decision_table.csv", [sys.executable, "-m", "analysis.export_decision_table"], ROOT),
 ]
 
 
@@ -25,10 +31,10 @@ def log(message):
 
 def main():
     total_start = time.perf_counter()
-    for name, command in STEPS:
+    for name, command, cwd in STEPS:
         log(f"Старт: {name}")
         start = time.perf_counter()
-        result = subprocess.run(command, cwd=ROOT)
+        result = subprocess.run(command, cwd=cwd)
         minutes = (time.perf_counter() - start) / 60
         if result.returncode != 0:
             log(f"ПОМИЛКА: {name} після {minutes:.1f} хв — зупиняюсь")
