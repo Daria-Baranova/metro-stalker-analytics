@@ -43,3 +43,12 @@
 {% macro p_value(z) -%}
     erfc(abs({{ z }})::float / sqrt(2))
 {%- endmacro %}
+
+
+{% macro diff_ci_bound(x1, n1, x2, n2, sign) -%}
+    ({{ share(x1, n1) }} - {{ share(x2, n2) }})
+    {{ sign }} {{ var('z_95') }} * sqrt(
+        {{ share(x1, n1) }} * (1 - {{ share(x1, n1) }}) / nullif({{ n1 }}, 0)
+        + {{ share(x2, n2) }} * (1 - {{ share(x2, n2) }}) / nullif({{ n2 }}, 0)
+    )
+{%- endmacro %}

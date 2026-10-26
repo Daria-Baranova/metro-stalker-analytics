@@ -24,6 +24,25 @@ models:
         description: p_s / p_f. 2.0 = удвічі частіше за норму.
       - name: z
         description: z-тест двох часток. |z| ≥ 2.69 — різниця не випадкова (Бонферроні).
+  
+  - name: int_satisfaction_counts
+    description: >
+      Кількості для питання 2 (лише Metro Exodus). Grain — сегмент.
+      n_c / x_c — спільні гравці (S⁺ ∩ Exodus) / з них позитивні відгуки на Exodus.
+      n_o / x_o — «лише Metro» / з них позитивні.
+    columns:
+      - name: segment
+        data_tests: [unique, not_null]
+
+  - name: mart_satisfaction
+    description: >
+      Питання 2: чи сподобалась Metro Exodus спільним гравцям так само, як фанатам «лише Metro».
+      delta_pp = pos_c − pos_o у п.п. з 95% CI. Grain — сегмент.
+    columns:
+      - name: segment
+        data_tests: [unique, not_null]
+      - name: delta_pp
+        description: Різниця задоволеності, п.п. ≥ −5 = «сподобалась не гірше» (умова B).
 
 unit_tests:
   - name: mart_overlap_formulas
@@ -49,3 +68,15 @@ unit_tests:
            p_f: 0.1, p_f_ci_low: 0.0412, p_f_ci_high: 0.1588,
            lift: null, lift_ci_low: null, lift_ci_high: null,
            z: null, p_value: null}
+  
+  - name: mart_satisfaction_formulas
+    description: Різниця часток і її 95% CI у п.п. (пораховано окремо в Python).
+    model: mart_satisfaction
+    given:
+      - input: ref('int_satisfaction_counts')
+        rows:
+          - {segment: diff_10, n_c: 100, x_c: 90, n_o: 1000, x_o: 800}
+    expect:
+      rows:
+        - {segment: diff_10, pos_c: 0.9, pos_o: 0.8, delta_pp: 10.0,
+           delta_pp_ci_low: 3.62, delta_pp_ci_high: 16.38}
