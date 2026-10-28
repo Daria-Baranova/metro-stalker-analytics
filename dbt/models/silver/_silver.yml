@@ -76,3 +76,14 @@ models:
               arguments:
                 to: ref('videos')
                 field: video_id
+  
+  - name: stg_comment_sentiment
+    description: Настрій коментаря за VADER — compound і мітка за порогами з vars.
+    columns:
+      - name: comment_id
+        data_tests: [unique, not_null]
+      - name: sentiment
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [positive, negative, neutral]

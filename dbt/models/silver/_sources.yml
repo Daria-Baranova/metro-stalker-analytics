@@ -41,3 +41,14 @@ sources:
           - name: comment_id
             description: ID коментаря в YouTube.
             data_tests: [unique, not_null]
+      
+      - name: comment_sentiment
+        description: Настрій коментарів YouTube за VADER. Рахує analysis/vader.py при кожному запуску.
+        config:
+          loaded_at_field: "to_timestamp(_dlt_load_id::numeric)"
+          freshness:
+            warn_after: {count: 2, period: day}
+            error_after: {count: 7, period: day}
+        columns:
+          - name: comment_id
+            data_tests: [unique, not_null]

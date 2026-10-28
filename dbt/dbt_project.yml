@@ -20,6 +20,9 @@ vars:
   satisfaction_delta_pp: -5
   min_group_n: 100
   min_group_x: 10
+  # VADER: стандартні пороги авторів бібліотеки
+  vader_positive: 0.05
+  vader_negative: -0.05
 
 models:
   metro_stalker:

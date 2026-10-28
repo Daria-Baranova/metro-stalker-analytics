@@ -101,6 +101,14 @@ models:
         data_type: bigint
       - name: n_o
         data_type: bigint
+  - name: mart_trailers
+    description: >
+      Питання 4 (на рішення не впливає): настрій коментарів до трейлерів за VADER.
+      positive_share = позитивні / (позитивні + негативні) з 95% CI. Grain — трейлер.
+    columns:
+      - name: video_id
+        data_tests: [unique, not_null]
+
 
 unit_tests:
   - name: mart_overlap_formulas
