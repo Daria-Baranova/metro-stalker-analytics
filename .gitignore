@@ -19,3 +19,5 @@ SESSION_BACKUP_*.md
 
 # Логи запусків
 logs/
+
+labeling/

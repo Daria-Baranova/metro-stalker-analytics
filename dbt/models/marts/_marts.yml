@@ -108,6 +108,14 @@ models:
     columns:
       - name: video_id
         data_tests: [unique, not_null]
+  - name: mart_vader_check
+    description: >
+      D3: точність VADER — збіги з ручною розміткою англійських коментарів (seed vader_labels).
+      Ціль ≥ 70%. Один рядок.
+    columns:
+      - name: accuracy
+        data_tests: [not_null]
+
 
 
 unit_tests:
