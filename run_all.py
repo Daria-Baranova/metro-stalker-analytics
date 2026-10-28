@@ -15,6 +15,7 @@ STEPS = [
     ("Відгуки Steam", [sys.executable, "-m", "ingest.steam_reviews"], ROOT),
     ("Ціни Steam і курс НБУ", [sys.executable, "-m", "ingest.steam_appdetails"], ROOT),
     ("Коментарі YouTube", [sys.executable, "-m", "ingest.youtube_comments"], ROOT),
+    ("VADER: настрій коментарів", [sys.executable, "-m", "analysis.vader"], ROOT),
     ("dbt: свіжість джерел", [DBT, "source", "freshness", "--target", "prod"], DBT_DIR),
     ("dbt: build prod", [DBT, "build", "--target", "prod"], DBT_DIR),
     ("Експорт decision_table.csv", [sys.executable, "-m", "analysis.export_decision_table"], ROOT),
