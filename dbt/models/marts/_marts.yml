@@ -115,6 +115,14 @@ models:
     columns:
       - name: accuracy
         data_tests: [not_null]
+  - name: mart_topics
+    description: >
+      Питання 3 (D1, на рішення не впливає): частка англійських відгуків спільних гравців на Exodus,
+      що згадують тему, окремо серед позитивних і негативних, з 95% CI. Grain — тема.
+    columns:
+      - name: topic
+        data_tests: [unique, not_null]
+
 
 
 
