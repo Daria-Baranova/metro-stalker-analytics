@@ -1,5 +1,5 @@
 label,action,priority
-Так,Посилений бюджет,1
-Тестово,A/B-тест посилення,2
-Ні,Базовий бюджет,3
-Мало даних,Базовий бюджет,4
+Yes,Increased budget,1
+Test,A/B test of increased budget,2
+No,Base budget,3
+Low data,Base budget,4

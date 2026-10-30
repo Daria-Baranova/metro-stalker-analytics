@@ -46,10 +46,10 @@ labeled as (
     select
         *,
         case
-            when is_low_data then 'Мало даних'
-            when condition_a and condition_b then 'Так'
-            when condition_a then 'Тестово'
-            else 'Ні'
+            when is_low_data then 'Low data'
+            when condition_a and condition_b then 'Yes'
+            when condition_a then 'Test'
+            else 'No'
         end as label
     from checks
 ),
@@ -62,21 +62,21 @@ scenario as (
 ),
 
 fallback as (
-    -- «Мало даних» бере рішення рядка «5 мов ЄС»
+    -- Low data takes the decision of the EU-5 row
     select
         labeled.*,
         scenario.english_label,
-        case when labeled.label = 'Мало даних' then scenario.eu5_label else labeled.label end
+        case when labeled.label = 'Low data' then scenario.eu5_label else labeled.label end
             as base_label
     from labeled
     cross join scenario
 ),
 
 effective as (
-    -- english = Ні → гіпотеза провалена → «Так» лише як A/B-тест
+    -- english = No → hypothesis failed → Yes only as an A/B test
     select
         *,
-        case when base_label = 'Так' and english_label = 'Ні' then 'Тестово' else base_label end
+        case when base_label = 'Yes' and english_label = 'No' then 'Test' else base_label end
             as action_label
     from fallback
 )
@@ -85,7 +85,7 @@ select
     effective.segment,
     effective.label,
     case
-        when effective.label = 'Мало даних' then 'За «5 мов ЄС»: ' || actions.action
+        when effective.label = 'Low data' then 'As EU-5: ' || actions.action
         else actions.action
     end as action,
     case when effective.condition_a then 'A ✓' else 'A ✗' end
