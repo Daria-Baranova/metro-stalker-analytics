@@ -1,0 +1,833 @@
+dashboard_title: "Metro 2039 \xD7 S.T.A.L.K.E.R. 2: Audience Overlap and Ad Budget"
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: false
+uuid: dea61d2c-606c-453c-a3a0-447fdfc3945e
+position:
+  CHART-6N_WMC8NDquRsP4WgZRa3:
+    children: []
+    id: CHART-6N_WMC8NDquRsP4WgZRa3
+    meta:
+      chartId: 7
+      height: 73
+      sliceName: "Times more often by reviewer activity (2\u20135, 6\u201320, 21+\
+        \ reviews)"
+      uuid: 12cb1451-fc2c-4c5d-85de-523a011cd3d3
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-1lNEBjqX9h_PULOGL2CIs
+    - ROW-3R8SB3YLC4nEh-R1DmdCO
+    type: CHART
+  CHART-86nAsHE8Y3JVeNEBmif6f:
+    children: []
+    id: CHART-86nAsHE8Y3JVeNEBmif6f
+    meta:
+      chartId: 4
+      height: 87
+      sliceName: Share of reviewers who also reviewed Metro Exodus
+      uuid: 40df540d-becc-4941-9807-fe28246a6032
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-skSNP20nI0T3819F3uFA3
+    - ROW-B38lD86ZfAyPDzT-mcd1R
+    type: CHART
+  CHART-HjK25YtKoJi9zE-TLeMbE:
+    children: []
+    id: CHART-HjK25YtKoJi9zE-TLeMbE
+    meta:
+      chartId: 10
+      height: 93
+      sliceName: Positive vs negative comments under Metro 2039 trailers (VADER, neutral
+        excluded)
+      uuid: 6b82a5cb-9ab3-4c61-9d61-023b26c47ab6
+      width: 8
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-C81ICX5P5csIpxRQMK5GV
+    - ROW-T3DOoT5JJjAF4_3kjtyPI
+    type: CHART
+  CHART-L_lKmyn1dPrmF5dEbiiAt:
+    children: []
+    id: CHART-L_lKmyn1dPrmF5dEbiiAt
+    meta:
+      chartId: 11
+      height: 107
+      sliceName: Topic mentions in English Metro Exodus reviews by S.T.A.L.K.E.R.
+        2 players
+      uuid: c779e728-8b9f-4072-86f9-eeeaff169f54
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-fYD4Qn58Q43JU-yRN0tuj
+    - ROW-kr5EUw_bEFvWyNhyyT8DD
+    type: CHART
+  CHART-OqSaTzEPUIwe7IkoGBXZ4:
+    children: []
+    id: CHART-OqSaTzEPUIwe7IkoGBXZ4
+    meta:
+      chartId: 6
+      height: 42
+      sliceName: "Group sizes (red = fewer than 100 \u2192 Low data)"
+      uuid: 9a42617e-cb62-4e59-b656-c6865dbf936a
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-1lNEBjqX9h_PULOGL2CIs
+    - ROW-ZiY_SYHwb1kI5YQd6MmuM
+    type: CHART
+  CHART-QWXZvKuR_kRGHI5yk5ZN0:
+    children: []
+    id: CHART-QWXZvKuR_kRGHI5yk5ZN0
+    meta:
+      chartId: 5
+      height: 84
+      sliceName: "Positive Metro Exodus reviews: S.T.A.L.K.E.R. 2 players minus Metro-only\
+        \ players (pp, threshold \u22125)"
+      uuid: 0bb971d8-746c-46a7-bb85-188d354ecf92
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-kykjGrOmP61KEGez-YObH
+    - ROW-S8JWbEtPrm-ftslcnlIsk
+    type: CHART
+  CHART-explore-1-1:
+    children: []
+    id: CHART-explore-1-1
+    meta:
+      chartId: 1
+      height: 56
+      sliceName: Decision by language segment
+      uuid: 1d810b48-7642-4fd2-bf2b-e30a7e85aad3
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-4a71coelO_8WDBf8Dr_Pg
+    - ROW-quLZBL8Zmt_KX304fH9g8
+    type: CHART
+  CHART-explore-2-1:
+    children: []
+    id: CHART-explore-2-1
+    meta:
+      chartId: 2
+      height: 59
+      sliceName: "How many times more often S.T.A.L.K.E.R. 2 players played Metro\
+        \ vs Far Cry 5 (threshold 1.5\xD7)"
+      uuid: 52cca3d8-e259-4322-884d-93f998a31d61
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-4a71coelO_8WDBf8Dr_Pg
+    - ROW-SqcIF1iqd7iMT_qPNOVa4
+    type: CHART
+  CHART-explore-3-1:
+    children: []
+    id: CHART-explore-3-1
+    meta:
+      chartId: 3
+      height: 56
+      sliceName: 'English: times more often than Far Cry 5'
+      uuid: 3ccfaa43-f008-470b-a9e3-5a32b200d436
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-4a71coelO_8WDBf8Dr_Pg
+    - ROW-quLZBL8Zmt_KX304fH9g8
+    type: CHART
+  CHART-explore-8-1:
+    children: []
+    id: CHART-explore-8-1
+    meta:
+      chartId: 8
+      height: 59
+      sliceName: All numbers (95% confidence intervals)
+      uuid: 361e7276-063c-41e7-860e-110e218bfb72
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-1lNEBjqX9h_PULOGL2CIs
+    - ROW-4wR951UdKum0aFlyzSCAc
+    type: CHART
+  CHART-l_2RnsTR3BYCOvfJw14DJ:
+    children: []
+    id: CHART-l_2RnsTR3BYCOvfJw14DJ
+    meta:
+      chartId: 9
+      height: 108
+      sliceName: VADER accuracy (140 hand-labeled comments)
+      uuid: 89c4ce1f-7cb5-4281-92a6-9cea7aa13bdd
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-C81ICX5P5csIpxRQMK5GV
+    - ROW-T3DOoT5JJjAF4_3kjtyPI
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-14gv-XvAPI54QziVtL6KN
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: "Metro 2039 \xD7 S.T.A.L.K.E.R. 2: Audience Overlap and Ad Budget"
+    type: HEADER
+  MARKDOWN-9kOVLc3nNGV9PDex5PHij:
+    children: []
+    id: MARKDOWN-9kOVLc3nNGV9PDex5PHij
+    meta:
+      code: "**A segment needs at least 100 players in every group** (and at least\
+        \ 10 reviews of each outcome). Red cells \u2192 Low data \u2192 the segment\
+        \ takes the EU-5 decision. The effect should also hold for light (2\u2013\
+        5 reviews), medium (6\u201320) and heavy (21+) reviewers, not only in one\
+        \ group."
+      height: 8
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-1lNEBjqX9h_PULOGL2CIs
+    - ROW---NPEb4lY_lh4JsgaHC5A
+    type: MARKDOWN
+  MARKDOWN-HmKQG-wA7xXimT20eoM1z:
+    children: []
+    id: MARKDOWN-HmKQG-wA7xXimT20eoM1z
+    meta:
+      code: "\nPublic Steam reviews \xB7 data before Oct 19, 2026 (UTC)"
+      height: 7
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-14gv-XvAPI54QziVtL6KN
+    type: MARKDOWN
+  MARKDOWN-Y2pX9UlsWAnDDkbM2P4XZ:
+    children: []
+    id: MARKDOWN-Y2pX9UlsWAnDDkbM2P4XZ
+    meta:
+      code: "**Share of each game's reviewers who also reviewed Metro Exodus.** \"\
+        Times more often\" on tab 1 = S.T.A.L.K.E.R. 2 bar \xF7 Far Cry 5 bar."
+      height: 10
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-skSNP20nI0T3819F3uFA3
+    - ROW-Yaiwo9uArxZ9abwTQB0vT
+    type: MARKDOWN
+  MARKDOWN-Z6OjSPLW-8ECYkYWn0j04:
+    children: []
+    id: MARKDOWN-Z6OjSPLW-8ECYkYWn0j04
+    meta:
+      code: '**Does not affect the decision.** Sentiment of YouTube comments under
+        three Metro 2039 trailers, scored by VADER (a rule-based word dictionary);
+        neutral comments are excluded. **Warning:** VADER matched my manual labels
+        on only 48% of 140 comments, so these shares are unreliable. Next step: a
+        pretrained ML model, checked on the same 140 labels.'
+      height: 10
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-C81ICX5P5csIpxRQMK5GV
+    - ROW-JqhuQksRy9qbFHZtiicwO
+    type: MARKDOWN
+  MARKDOWN-fab1569l7Xor6hKEHGWB5:
+    children: []
+    id: MARKDOWN-fab1569l7Xor6hKEHGWB5
+    meta:
+      code: "**Share of positive Metro Exodus reviews: players who also reviewed S.T.A.L.K.E.R.\
+        \ 2 minus Metro-only players, in percentage points.** Criterion B passes if\
+        \ the difference is \u2265 \u22125 pp. Italian and French have very few common\
+        \ players (14 and 48), so their bars are unreliable."
+      height: 13
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-kykjGrOmP61KEGez-YObH
+    - ROW-PFoIiSFxeLTd4jlt9oBAU
+    type: MARKDOWN
+  MARKDOWN-glcuP5y-crlfWPSznYduQ:
+    children: []
+    id: MARKDOWN-glcuP5y-crlfWPSznYduQ
+    meta:
+      code: "**Does not affect the decision.** Share of English Metro Exodus reviews\
+        \ by S.T.A.L.K.E.R. 2 players that mention each topic (1,388 positive, 233\
+        \ negative reviews). **Atmosphere** is praised far more often than criticised\
+        \ \u2192 show it in ads. **Bugs** are the top complaint \u2192 avoid polish\
+        \ claims. **Story** is the most mentioned topic, but equally in positive and\
+        \ negative reviews. A mention is not a rating, and this is Exodus, not 2039."
+      height: 13
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-fYD4Qn58Q43JU-yRN0tuj
+    - ROW-c0CzGvlrzL9VRImu259oR
+    type: MARKDOWN
+  MARKDOWN-j8QXZ-Jrlqe-5ASjIX4zN:
+    children: []
+    id: MARKDOWN-j8QXZ-Jrlqe-5ASjIX4zN
+    meta:
+      code: "**A** = played Metro \u2265 1.5\xD7 more often than Far Cry 5 players\
+        \ (significant) \xB7 **B** = liked Metro not worse than Metro-only players\
+        \ (\u2265 \u22125 pp)\r\n**eu5** = German + French + Spanish + Italian + Polish\
+        \ \xB7 **Low data** segments take the eu5 decision"
+      height: 6
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-4a71coelO_8WDBf8Dr_Pg
+    - ROW-8SGXnr8aRQmES29g53EGS
+    type: MARKDOWN
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW---NPEb4lY_lh4JsgaHC5A:
+    children:
+    - MARKDOWN-9kOVLc3nNGV9PDex5PHij
+    id: ROW---NPEb4lY_lh4JsgaHC5A
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-1lNEBjqX9h_PULOGL2CIs
+    type: ROW
+  ROW-14gv-XvAPI54QziVtL6KN:
+    children:
+    - MARKDOWN-HmKQG-wA7xXimT20eoM1z
+    id: ROW-14gv-XvAPI54QziVtL6KN
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-3R8SB3YLC4nEh-R1DmdCO:
+    children:
+    - CHART-6N_WMC8NDquRsP4WgZRa3
+    id: ROW-3R8SB3YLC4nEh-R1DmdCO
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-1lNEBjqX9h_PULOGL2CIs
+    type: ROW
+  ROW-4wR951UdKum0aFlyzSCAc:
+    children:
+    - CHART-explore-8-1
+    id: ROW-4wR951UdKum0aFlyzSCAc
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-1lNEBjqX9h_PULOGL2CIs
+    type: ROW
+  ROW-8SGXnr8aRQmES29g53EGS:
+    children:
+    - MARKDOWN-j8QXZ-Jrlqe-5ASjIX4zN
+    id: ROW-8SGXnr8aRQmES29g53EGS
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-4a71coelO_8WDBf8Dr_Pg
+    type: ROW
+  ROW-B38lD86ZfAyPDzT-mcd1R:
+    children:
+    - CHART-86nAsHE8Y3JVeNEBmif6f
+    id: ROW-B38lD86ZfAyPDzT-mcd1R
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-skSNP20nI0T3819F3uFA3
+    type: ROW
+  ROW-JqhuQksRy9qbFHZtiicwO:
+    children:
+    - MARKDOWN-Z6OjSPLW-8ECYkYWn0j04
+    id: ROW-JqhuQksRy9qbFHZtiicwO
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-C81ICX5P5csIpxRQMK5GV
+    type: ROW
+  ROW-PFoIiSFxeLTd4jlt9oBAU:
+    children:
+    - MARKDOWN-fab1569l7Xor6hKEHGWB5
+    id: ROW-PFoIiSFxeLTd4jlt9oBAU
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-kykjGrOmP61KEGez-YObH
+    type: ROW
+  ROW-S8JWbEtPrm-ftslcnlIsk:
+    children:
+    - CHART-QWXZvKuR_kRGHI5yk5ZN0
+    id: ROW-S8JWbEtPrm-ftslcnlIsk
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-kykjGrOmP61KEGez-YObH
+    type: ROW
+  ROW-SqcIF1iqd7iMT_qPNOVa4:
+    children:
+    - CHART-explore-2-1
+    id: ROW-SqcIF1iqd7iMT_qPNOVa4
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-4a71coelO_8WDBf8Dr_Pg
+    type: ROW
+  ROW-T3DOoT5JJjAF4_3kjtyPI:
+    children:
+    - CHART-HjK25YtKoJi9zE-TLeMbE
+    - CHART-l_2RnsTR3BYCOvfJw14DJ
+    id: ROW-T3DOoT5JJjAF4_3kjtyPI
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-C81ICX5P5csIpxRQMK5GV
+    type: ROW
+  ROW-Yaiwo9uArxZ9abwTQB0vT:
+    children:
+    - MARKDOWN-Y2pX9UlsWAnDDkbM2P4XZ
+    id: ROW-Yaiwo9uArxZ9abwTQB0vT
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-skSNP20nI0T3819F3uFA3
+    type: ROW
+  ROW-ZiY_SYHwb1kI5YQd6MmuM:
+    children:
+    - CHART-OqSaTzEPUIwe7IkoGBXZ4
+    id: ROW-ZiY_SYHwb1kI5YQd6MmuM
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-1lNEBjqX9h_PULOGL2CIs
+    type: ROW
+  ROW-c0CzGvlrzL9VRImu259oR:
+    children:
+    - MARKDOWN-glcuP5y-crlfWPSznYduQ
+    id: ROW-c0CzGvlrzL9VRImu259oR
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-fYD4Qn58Q43JU-yRN0tuj
+    type: ROW
+  ROW-kr5EUw_bEFvWyNhyyT8DD:
+    children:
+    - CHART-L_lKmyn1dPrmF5dEbiiAt
+    id: ROW-kr5EUw_bEFvWyNhyyT8DD
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-fYD4Qn58Q43JU-yRN0tuj
+    type: ROW
+  ROW-quLZBL8Zmt_KX304fH9g8:
+    children:
+    - CHART-explore-1-1
+    - CHART-explore-3-1
+    id: ROW-quLZBL8Zmt_KX304fH9g8
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    - TAB-4a71coelO_8WDBf8Dr_Pg
+    type: ROW
+  TAB-1lNEBjqX9h_PULOGL2CIs:
+    children:
+    - ROW---NPEb4lY_lh4JsgaHC5A
+    - ROW-ZiY_SYHwb1kI5YQd6MmuM
+    - ROW-3R8SB3YLC4nEh-R1DmdCO
+    - ROW-4wR951UdKum0aFlyzSCAc
+    id: TAB-1lNEBjqX9h_PULOGL2CIs
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Can we trust the numbers?
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    type: TAB
+  TAB-4a71coelO_8WDBf8Dr_Pg:
+    children:
+    - ROW-8SGXnr8aRQmES29g53EGS
+    - ROW-quLZBL8Zmt_KX304fH9g8
+    - ROW-SqcIF1iqd7iMT_qPNOVa4
+    id: TAB-4a71coelO_8WDBf8Dr_Pg
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Where to invest more?
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    type: TAB
+  TAB-C81ICX5P5csIpxRQMK5GV:
+    children:
+    - ROW-JqhuQksRy9qbFHZtiicwO
+    - ROW-T3DOoT5JJjAF4_3kjtyPI
+    id: TAB-C81ICX5P5csIpxRQMK5GV
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: How do people react to the trailers?
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    type: TAB
+  TAB-fYD4Qn58Q43JU-yRN0tuj:
+    children:
+    - ROW-c0CzGvlrzL9VRImu259oR
+    - ROW-kr5EUw_bEFvWyNhyyT8DD
+    id: TAB-fYD4Qn58Q43JU-yRN0tuj
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: What to say in ads?
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    type: TAB
+  TAB-kykjGrOmP61KEGez-YObH:
+    children:
+    - ROW-PFoIiSFxeLTd4jlt9oBAU
+    - ROW-S8JWbEtPrm-ftslcnlIsk
+    id: TAB-kykjGrOmP61KEGez-YObH
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Did they like Metro?
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    type: TAB
+  TAB-skSNP20nI0T3819F3uFA3:
+    children:
+    - ROW-Yaiwo9uArxZ9abwTQB0vT
+    - ROW-B38lD86ZfAyPDzT-mcd1R
+    id: TAB-skSNP20nI0T3819F3uFA3
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Did they play Metro more often?
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-kiSsiap3KHKRlBXtDwkyA
+    type: TAB
+  TABS-kiSsiap3KHKRlBXtDwkyA:
+    children:
+    - TAB-4a71coelO_8WDBf8Dr_Pg
+    - TAB-skSNP20nI0T3819F3uFA3
+    - TAB-kykjGrOmP61KEGez-YObH
+    - TAB-1lNEBjqX9h_PULOGL2CIs
+    - TAB-C81ICX5P5csIpxRQMK5GV
+    - TAB-fYD4Qn58Q43JU-yRN0tuj
+    id: TABS-kiSsiap3KHKRlBXtDwkyA
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: TABS
+metadata:
+  chart_configuration:
+    '1':
+      id: 1
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+    '2':
+      id: 2
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+    '4':
+      id: 4
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+    '5':
+      id: 5
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+    '6':
+      id: 6
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+    '7':
+      id: 7
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 8
+        - 9
+        - 10
+        - 11
+    '8':
+      id: 8
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 9
+        - 10
+        - 11
+    '10':
+      id: 10
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 11
+    '11':
+      id: 11
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+  native_filter_configuration:
+  - id: NATIVE_FILTER-aLyqjVs7WqzTs6OKFheHy
+    type: NATIVE_FILTER
+    name: Segment
+    filterType: filter_select
+    description: ''
+    targets:
+    - column:
+        name: segment
+      datasetUuid: 72fc7969-5862-4843-bc69-1f8f08c71db6
+    scope:
+      rootPath:
+      - TAB-skSNP20nI0T3819F3uFA3
+      - TAB-kykjGrOmP61KEGez-YObH
+      - TAB-1lNEBjqX9h_PULOGL2CIs
+      excluded: []
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      creatable: true
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    sortMetric: null
+  chart_customization_config: []
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  label_colors:
+    'Yes': '#0ca30c'
+    Test: '#fab219'
+    'No': '#d03b3b'
+    Low data: '#898781'
+    S.T.A.L.K.E.R. 2 players: '#3987e5'
+    Far Cry 5 players: '#898781'
+    Difference, pp: '#3987e5'
+    2-5: '#86b6ef'
+    6-20: '#3987e5'
+    21+: '#1c5cab'
+    Positive: '#3987e5'
+    Negative: '#d95926'
+    In positive reviews: '#3987e5'
+    In negative reviews: '#d95926'
+    "Threshold 1.5\xD7": '#f0efec'
+    "Same as Far Cry 5 (1\xD7)": '#898781'
+    "Threshold \u22125 pp": '#f0efec'
+    No difference (0): '#898781'
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  default_filters: '{}'
+  show_chart_timestamps: false
+  color_scheme_domain: []
+  shared_label_colors: []
+  map_label_colors: {}
+theme_uuid: null
+version: 1.0.0

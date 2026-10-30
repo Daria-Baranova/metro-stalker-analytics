@@ -1,0 +1,104 @@
+slice_name: "Group sizes (red = fewer than 100 \u2192 Low data)"
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 1__table
+  viz_type: table
+  slice_id: 6
+  matrixify_enable: false
+  matrixify_mode_columns: disabled
+  matrixify_dimension_selection_mode_columns: members
+  matrixify_dimension_columns:
+    dimension: ''
+    values: []
+  matrixify_topn_value_columns: 10
+  matrixify_all_sort_by_columns: a_to_z
+  matrixify_topn_order_columns: true
+  matrixify_show_column_headers: true
+  matrixify_fit_columns_dynamically: true
+  matrixify_mode_rows: disabled
+  matrixify_dimension_selection_mode_rows: members
+  matrixify_dimension_rows:
+    dimension: ''
+    values: []
+  matrixify_topn_value_rows: 10
+  matrixify_all_sort_by_rows: a_to_z
+  matrixify_topn_order_rows: true
+  matrixify_show_row_labels: true
+  matrixify_row_height: 300
+  matrixify_charts_per_row: 3
+  matrixify_cell_title_template: ''
+  query_mode: raw
+  groupby: []
+  temporal_columns_lookup: {}
+  all_columns:
+  - segment
+  - label
+  - n_s
+  - n_f
+  - n_c
+  - n_o
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols:
+  - '["priority", true]'
+  - '["lift", false]'
+  server_pagination: false
+  row_limit: 10000
+  table_timestamp_format: smart_date
+  include_search: false
+  allow_rearrange_columns: false
+  allow_render_html: true
+  column_config:
+    n_c:
+      d3NumberFormat: ',d'
+    n_f:
+      d3NumberFormat: ',d'
+    n_o:
+      d3NumberFormat: ',d'
+    n_s:
+      d3NumberFormat: ',d'
+  show_cell_bars: false
+  align_pn: false
+  color_pn: true
+  conditional_formatting:
+  - column: n_s
+    colorScheme: colorError
+    columnFormatting: n_s
+    objectFormatting: BACKGROUND_COLOR
+    useGradient: false
+    operator: <
+    targetValue: 100
+  - column: n_c
+    colorScheme: colorError
+    columnFormatting: n_c
+    objectFormatting: BACKGROUND_COLOR
+    useGradient: false
+    operator: <
+    targetValue: 100
+  - column: n_f
+    colorScheme: colorError
+    columnFormatting: n_f
+    objectFormatting: BACKGROUND_COLOR
+    useGradient: false
+    operator: <
+    targetValue: 100
+  - column: n_o
+    colorScheme: colorError
+    columnFormatting: n_o
+    objectFormatting: BACKGROUND_COLOR
+    useGradient: false
+    operator: <
+    targetValue: 100
+  comparison_type: values
+  extra_form_data: {}
+  dashboards:
+  - 1
+query_context: '{"datasource":{"id":1,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["segment","label","n_s","n_f","n_c","n_o"],"orderby":[["priority",true],["lift",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"group_others_when_limit_reached":false,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[]}],"form_data":{"datasource":"1__table","viz_type":"table","slice_id":6,"matrixify_enable":false,"matrixify_mode_columns":"disabled","matrixify_dimension_selection_mode_columns":"members","matrixify_dimension_columns":{"dimension":"","values":[]},"matrixify_topn_value_columns":10,"matrixify_all_sort_by_columns":"a_to_z","matrixify_topn_order_columns":true,"matrixify_show_column_headers":true,"matrixify_fit_columns_dynamically":true,"matrixify_mode_rows":"disabled","matrixify_dimension_selection_mode_rows":"members","matrixify_dimension_rows":{"dimension":"","values":[]},"matrixify_topn_value_rows":10,"matrixify_all_sort_by_rows":"a_to_z","matrixify_topn_order_rows":true,"matrixify_show_row_labels":true,"matrixify_row_height":300,"matrixify_charts_per_row":3,"matrixify_cell_title_template":"","query_mode":"raw","groupby":[],"temporal_columns_lookup":{},"all_columns":["segment","label","n_s","n_f","n_c","n_o"],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":["[\"priority\",
+  true]","[\"lift\", false]"],"server_pagination":false,"row_limit":10000,"table_timestamp_format":"smart_date","include_search":false,"allow_rearrange_columns":false,"allow_render_html":true,"column_config":{"n_c":{"d3NumberFormat":",d"},"n_f":{"d3NumberFormat":",d"},"n_o":{"d3NumberFormat":",d"},"n_s":{"d3NumberFormat":",d"}},"show_cell_bars":false,"align_pn":false,"color_pn":true,"conditional_formatting":[{"column":"n_s","colorScheme":"colorError","columnFormatting":"n_s","objectFormatting":"BACKGROUND_COLOR","useGradient":false,"operator":"<","targetValue":100},{"column":"n_c","colorScheme":"colorError","columnFormatting":"n_c","objectFormatting":"BACKGROUND_COLOR","useGradient":false,"operator":"<","targetValue":100},{"column":"n_f","colorScheme":"colorError","columnFormatting":"n_f","objectFormatting":"BACKGROUND_COLOR","useGradient":false,"operator":"<","targetValue":100},{"column":"n_o","colorScheme":"colorError","columnFormatting":"n_o","objectFormatting":"BACKGROUND_COLOR","useGradient":false,"operator":"<","targetValue":100}],"comparison_type":"values","extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 9a42617e-cb62-4e59-b656-c6865dbf936a
+version: 1.0.0
+dataset_uuid: 72fc7969-5862-4843-bc69-1f8f08c71db6

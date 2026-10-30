@@ -1,0 +1,88 @@
+slice_name: All numbers (95% confidence intervals)
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 1__table
+  viz_type: table
+  matrixify_enable: false
+  matrixify_mode_columns: disabled
+  matrixify_dimension_selection_mode_columns: members
+  matrixify_dimension_columns:
+    dimension: ''
+    values: []
+  matrixify_topn_value_columns: 10
+  matrixify_all_sort_by_columns: a_to_z
+  matrixify_topn_order_columns: true
+  matrixify_show_column_headers: true
+  matrixify_fit_columns_dynamically: true
+  matrixify_mode_rows: disabled
+  matrixify_dimension_selection_mode_rows: members
+  matrixify_dimension_rows:
+    dimension: ''
+    values: []
+  matrixify_topn_value_rows: 10
+  matrixify_all_sort_by_rows: a_to_z
+  matrixify_topn_order_rows: true
+  matrixify_show_row_labels: true
+  matrixify_row_height: 300
+  matrixify_charts_per_row: 3
+  matrixify_cell_title_template: ''
+  query_mode: raw
+  groupby: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup: {}
+  all_columns:
+  - segment
+  - label
+  - lift
+  - lift_ci_low
+  - lift_ci_high
+  - z
+  - p_value
+  - delta_pp
+  - delta_pp_ci_low
+  - delta_pp_ci_high
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols:
+  - '["priority", true]'
+  - '["lift", false]'
+  order_desc: true
+  server_pagination: false
+  server_page_length: 10
+  row_limit: 10000
+  percent_metric_calculation: row_limit
+  show_totals: false
+  table_timestamp_format: smart_date
+  include_search: false
+  allow_rearrange_columns: false
+  allow_render_html: true
+  column_config:
+    lift:
+      d3NumberFormat: .2f
+    lift_ci_low:
+      d3NumberFormat: .2f
+    lift_ci_high:
+      d3NumberFormat: .2f
+    z:
+      d3NumberFormat: .2f
+    p_value:
+      d3NumberFormat: .4f
+  show_cell_bars: false
+  align_pn: false
+  color_pn: true
+  comparison_color_enabled: false
+  comparison_color_scheme: Green
+  conditional_formatting: []
+  comparison_type: values
+  extra_form_data: {}
+  dashboards:
+  - 1
+query_context: '{"datasource":{"id":1,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["segment","label","lift","lift_ci_low","lift_ci_high","z","p_value","delta_pp","delta_pp_ci_low","delta_pp_ci_high"],"orderby":[["priority",true],["lift",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"group_others_when_limit_reached":false,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[]}],"form_data":{"datasource":"1__table","viz_type":"table","matrixify_enable":false,"matrixify_mode_columns":"disabled","matrixify_dimension_selection_mode_columns":"members","matrixify_dimension_columns":{"dimension":"","values":[]},"matrixify_topn_value_columns":10,"matrixify_all_sort_by_columns":"a_to_z","matrixify_topn_order_columns":true,"matrixify_show_column_headers":true,"matrixify_fit_columns_dynamically":true,"matrixify_mode_rows":"disabled","matrixify_dimension_selection_mode_rows":"members","matrixify_dimension_rows":{"dimension":"","values":[]},"matrixify_topn_value_rows":10,"matrixify_all_sort_by_rows":"a_to_z","matrixify_topn_order_rows":true,"matrixify_show_row_labels":true,"matrixify_row_height":300,"matrixify_charts_per_row":3,"matrixify_cell_title_template":"","query_mode":"raw","groupby":[],"time_grain_sqla":"P1D","temporal_columns_lookup":{},"all_columns":["segment","label","lift","lift_ci_low","lift_ci_high","z","p_value","delta_pp","delta_pp_ci_low","delta_pp_ci_high"],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":["[\"priority\",
+  true]","[\"lift\", false]"],"order_desc":true,"server_pagination":false,"server_page_length":10,"row_limit":10000,"percent_metric_calculation":"row_limit","show_totals":false,"table_timestamp_format":"smart_date","include_search":false,"allow_rearrange_columns":false,"allow_render_html":true,"column_config":{"lift":{"d3NumberFormat":".2f"},"lift_ci_low":{"d3NumberFormat":".2f"},"lift_ci_high":{"d3NumberFormat":".2f"},"z":{"d3NumberFormat":".2f"},"p_value":{"d3NumberFormat":".4f"}},"show_cell_bars":false,"align_pn":false,"color_pn":true,"comparison_color_enabled":false,"comparison_color_scheme":"Green","conditional_formatting":[],"comparison_type":"values","extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 361e7276-063c-41e7-860e-110e218bfb72
+version: 1.0.0
+dataset_uuid: 72fc7969-5862-4843-bc69-1f8f08c71db6

@@ -19,6 +19,7 @@ STEPS = [
     ("dbt: свіжість джерел", [DBT, "source", "freshness", "--target", "prod"], DBT_DIR),
     ("dbt: build prod", [DBT, "build", "--target", "prod"], DBT_DIR),
     ("Експорт decision_table.csv", [sys.executable, "-m", "analysis.export_decision_table"], ROOT),
+    ("Superset: імпорт дашборду", [sys.executable, "superset/dashboard.py", "import"], ROOT),
 ]
 
 
