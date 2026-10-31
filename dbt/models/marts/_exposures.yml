@@ -1,0 +1,16 @@
+exposures:
+  - name: superset_ad_budget_dashboard
+    label: "Metro 2039 × S.T.A.L.K.E.R. 2: Audience Overlap and Ad Budget"
+    type: dashboard
+    maturity: medium
+    url: http://localhost:8089/superset/dashboard/1/
+    description: "Superset dashboard, six tabs with one question each: decision, overlap, satisfaction, data quality, trailer sentiment, ad topics."
+    depends_on:
+      - ref('mart_decision')
+      - ref('mart_overlap')
+      - ref('mart_satisfaction')
+      - ref('mart_trailers')
+      - ref('mart_vader_check')
+      - ref('mart_topics')
+    owner:
+      name: Dasha
