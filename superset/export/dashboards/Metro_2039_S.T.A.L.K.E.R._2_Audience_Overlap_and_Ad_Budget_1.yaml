@@ -286,12 +286,14 @@ position:
     children: []
     id: MARKDOWN-glcuP5y-crlfWPSznYduQ
     meta:
-      code: "**Does not affect the decision.** Share of English Metro Exodus reviews\
-        \ by S.T.A.L.K.E.R. 2 players that mention each topic (1,388 positive, 233\
-        \ negative reviews). **Atmosphere** is praised far more often than criticised\
-        \ \u2192 show it in ads. **Bugs** are the top complaint \u2192 avoid polish\
-        \ claims. **Story** is the most mentioned topic, but equally in positive and\
-        \ negative reviews. A mention is not a rating, and this is Exodus, not 2039."
+      code: '**Does not affect the decision.** Share of English Metro Exodus reviews
+        by S.T.A.L.K.E.R. 2 players that mention each topic (1,388 positive, 233 negative
+        reviews). **Atmosphere** is the only topic praised clearly more often than
+        criticized, so ads built around it are expected to get a stronger response.
+        **Story, gameplay and graphics** matter to players, but appear about as often
+        in negative reviews as in positive ones. **Bugs** drive negative reviews,
+        which is not surprising: ad spending pays off only with a technically stable
+        launch. A mention is not a rating, and this is Exodus, not 2039.'
       height: 13
       width: 12
     parents:
@@ -799,6 +801,16 @@ metadata:
       ownState: {}
     cascadeParentIds: []
     sortMetric: null
+    chartsInScope:
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    tabsInScope:
+    - TAB-skSNP20nI0T3819F3uFA3
+    - TAB-kykjGrOmP61KEGez-YObH
+    - TAB-1lNEBjqX9h_PULOGL2CIs
   chart_customization_config: []
   color_scheme: ''
   refresh_frequency: 0
@@ -824,10 +836,12 @@ metadata:
     No difference (0): '#898781'
   timed_refresh_immune_slices: []
   cross_filters_enabled: true
-  default_filters: '{}'
   show_chart_timestamps: false
   color_scheme_domain: []
-  shared_label_colors: []
+  shared_label_colors:
+  - "Same as Far Cry 5 (1\xD7)"
+  - "Threshold 1.5\xD7"
   map_label_colors: {}
+  default_filters: '{}'
 theme_uuid: null
 version: 1.0.0
