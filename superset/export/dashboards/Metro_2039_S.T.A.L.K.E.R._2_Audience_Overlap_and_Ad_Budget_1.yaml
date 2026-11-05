@@ -224,7 +224,8 @@ position:
     children: []
     id: MARKDOWN-HmKQG-wA7xXimT20eoM1z
     meta:
-      code: "\nPublic Steam reviews \xB7 data before Oct 19, 2026 (UTC)"
+      code: "\n**Where should Metro 2039 spend more on ads among S.T.A.L.K.E.R. 2\
+        \ players?** \xB7 Public Steam reviews \xB7 data before Oct 19, 2026 (UTC)"
       height: 7
       width: 12
     parents:
@@ -236,8 +237,9 @@ position:
     children: []
     id: MARKDOWN-Y2pX9UlsWAnDDkbM2P4XZ
     meta:
-      code: "**Share of each game's reviewers who also reviewed Metro Exodus.** \"\
-        Times more often\" on tab 1 = S.T.A.L.K.E.R. 2 bar \xF7 Far Cry 5 bar."
+      code: "- Share of each game's reviewers who **also reviewed Metro Exodus**\r\
+        \n- **Blue longer than grey** \u2192 S.T.A.L.K.E.R. 2 players play Metro more\
+        \ often"
       height: 10
       width: 12
     parents:
@@ -251,11 +253,9 @@ position:
     children: []
     id: MARKDOWN-Z6OjSPLW-8ECYkYWn0j04
     meta:
-      code: '**Does not affect the decision.** Sentiment of YouTube comments under
-        three Metro 2039 trailers, scored by VADER (a rule-based word dictionary);
-        neutral comments are excluded. **Warning:** VADER matched my manual labels
-        on only 48% of 140 comments, so these shares are unreliable. Next step: a
-        pretrained ML model, checked on the same 140 labels.'
+      code: "**Extra \xB7 not part of the decision**\r\n- Mood of YouTube comments\
+        \ under the trailers, scored by VADER\r\n- \u26A0\uFE0F VADER was right only\
+        \ **48%** of the time (target 70%) \u2192 differences **can't be trusted**"
       height: 10
       width: 12
     parents:
@@ -286,14 +286,15 @@ position:
     children: []
     id: MARKDOWN-glcuP5y-crlfWPSznYduQ
     meta:
-      code: '**Does not affect the decision.** Share of English Metro Exodus reviews
-        by S.T.A.L.K.E.R. 2 players that mention each topic (1,388 positive, 233 negative
-        reviews). **Atmosphere** is the only topic praised clearly more often than
-        criticized, so ads built around it are expected to get a stronger response.
-        **Story, gameplay and graphics** matter to players, but appear about as often
-        in negative reviews as in positive ones. **Bugs** drive negative reviews,
-        which is not surprising: ad spending pays off only with a technically stable
-        launch. A mention is not a rating, and this is Exodus, not 2039.'
+      code: "**Extra \xB7 not part of the decision** Share of English Metro Exodus\
+        \ reviews by S.T.A.L.K.E.R. 2 players that mention each topic (1,388 positive,\
+        \ 233 negative reviews). **Atmosphere** is the only topic praised clearly\
+        \ more often than criticized, so ads built around it are expected to get a\
+        \ stronger response. **Story, gameplay and graphics** matter to players, but\
+        \ appear about as often in negative reviews as in positive ones. **Bugs**\
+        \ drive negative reviews, which is not surprising: ad spending pays off only\
+        \ with a technically stable launch. A mention is not a rating, and this is\
+        \ Exodus, not 2039."
       height: 13
       width: 12
     parents:
@@ -307,11 +308,12 @@ position:
     children: []
     id: MARKDOWN-j8QXZ-Jrlqe-5ASjIX4zN
     meta:
-      code: "**A** = played Metro \u2265 1.5\xD7 more often than Far Cry 5 players\
-        \ (significant) \xB7 **B** = liked Metro not worse than Metro-only players\
-        \ (\u2265 \u22125 pp)\r\n**eu5** = German + French + Spanish + Italian + Polish\
-        \ \xB7 **Low data** segments take the eu5 decision"
-      height: 6
+      code: "- **A:** played Metro **1.5\xD7+** more often than Far Cry 5 players\
+        \ \xB7 **B:** liked it no worse (\u2265 \u22125 pp)\r\n- **Yes** = A + B \xB7\
+        \ **Test** = A only \xB7 **No** = no A \xB7 **Low data** = under 100 players\
+        \ \u2192 takes the **EU-5** decision\r\n- **EU-5** = German, French, Spanish,\
+        \ Italian, Polish"
+      height: 13
       width: 12
     parents:
     - ROOT_ID
