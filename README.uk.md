@@ -75,33 +75,66 @@ flowchart LR
 
 ## Як запустити
 
-Потрібні **Docker Desktop** і **Python 3.12**. Порти **5433** (PostgreSQL) і **8089** (Superset) мають бути вільні.
+### Що потрібно
 
-1. Скопіюйте `.env.example` у `.env` і заповніть значення:
+- **Git** — щоб завантажити репозиторій.
+- **Docker Desktop**, встановлений і запущений. У ньому працюють PostgreSQL і Superset.
+- **Python 3.12**.
+- **Інтернет.** Даних у Git немає: `run_all.py` завантажує їх під час запуску з публічних API (відгуки й ціни Steam, курс НБУ, коментарі YouTube).
+- **Вільні порти 5433** (PostgreSQL) **і 8089** (Superset).
+- **За бажанням: ключ YouTube Data API.** Він потрібен лише для вкладки 5 дашборду (реакція на трейлери). Без нього працює все інше, зокрема рішення.
+
+Перевірено на Windows 11. **ДОПИСАТИ після тесту з нуля:** скільки триває перший запуск.
+
+### Кроки
+
+1. Завантажте репозиторій:
+   ```bash
+   git clone https://github.com/Daria-Baranova/metro-stalker-analytics.git
+   cd metro-stalker-analytics
+   ```
+2. Скопіюйте `.env.example` у `.env` і заповніть значення:
    - `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB` — будь-які;
    - `SUPERSET_SECRET_KEY` — довгий випадковий рядок;
    - `SUPERSET_ADMIN_PASSWORD` — придумайте пароль, з яким будете входити в дашборд;
    - `HASH_SALT` — випадковий рядок (Steam ID зберігаються лише як хеші);
-   - `YOUTUBE_API_KEY` — за бажанням.
-2. Запустіть базу і Superset:
+   - `YOUTUBE_API_KEY` — за бажанням, див. [Як отримати ключ YouTube](#як-отримати-ключ-youtube). Залиште порожнім, щоб пропустити YouTube.
+3. Запустіть базу і Superset:
    ```bash
    docker compose up -d
    ```
-3. Встановіть Python-пакети у віртуальному середовищі (наприклад, `python -m venv .venv` і активуйте його):
+4. Встановіть Python-пакети у віртуальному середовищі:
+   ```bash
+   python -m venv .venv
+   ```
+   Активуйте його: `.venv\Scripts\activate` у Windows, `source .venv/bin/activate` у macOS чи Linux. Потім:
    ```bash
    pip install -r requirements.txt
    ```
-4. Запустіть весь пайплайн:
+5. Запустіть весь пайплайн:
    ```bash
    python run_all.py
    ```
-5. Відкрийте дашборд. Він працює **на вашому комп'ютері**: відкрийте у браузері http://localhost:8089 і увійдіть.
+6. Відкрийте дашборд. Він працює **на вашому комп'ютері**: відкрийте у браузері http://localhost:8089 і увійдіть.
    - Логін: `admin`
    - Пароль: той, що ви вписали в `.env` у рядку `SUPERSET_ADMIN_PASSWORD`.
 
-**ДОПИСАТИ після тесту з нуля:** скільки триває перший запуск; що буде без ключа YouTube.
+**Без ключа YouTube** `run_all.py` виводить попередження і пропускає кроки YouTube і VADER, а dbt пропускає 4 моделі коментарів та їхні тести. Рішення і вкладки 1–4 та 6 працюють як завжди. Два графіки на вкладці 5 показують помилку, бо їхніх таблиць немає.
 
 **Еталон:** порівняйте свій запуск з [results/decision_table.csv](results/decision_table.csv). Невеликі розбіжності можливі: Steam видаляє й змінює відгуки.
+
+### Як отримати ключ YouTube
+
+Ключ безкоштовний, кожен використовує свій. Ніколи не додавайте `.env` у Git (він уже є в `.gitignore`).
+
+1. Увійдіть у [Google Cloud Console](https://console.cloud.google.com/) з акаунтом Google.
+2. Створіть новий проєкт.
+3. Відкрийте **APIs & Services → Library**, знайдіть **YouTube Data API v3** і натисніть **Enable**.
+4. Відкрийте **APIs & Services → Credentials → Create credentials → API key**.
+5. Рекомендовано: відредагуйте ключ і в **API restrictions** дозвольте лише **YouTube Data API v3**.
+6. Вставте ключ у `.env`: `YOUTUBE_API_KEY=ваш_ключ`.
+
+Один запуск використовує приблизно 100 з 10 000 безкоштовних одиниць квоти на день (близько 9 300 коментарів, по 100 за запит).
 
 ## Репозиторій
 

@@ -75,33 +75,66 @@ flowchart LR
 
 ## Run it yourself
 
-You need **Docker Desktop** and **Python 3.12**. Ports **5433** (PostgreSQL) and **8089** (Superset) must be free.
+### What you need
 
-1. Copy `.env.example` to `.env` and fill in the values:
+- **Git**, to download the repository.
+- **Docker Desktop**, installed and running. It runs PostgreSQL and Superset.
+- **Python 3.12**.
+- **Internet access.** The data is not stored in Git: `run_all.py` downloads it from public APIs during the run (Steam reviews and prices, NBU exchange rate, YouTube comments).
+- **Free ports 5433** (PostgreSQL) **and 8089** (Superset).
+- **Optional: a YouTube Data API key.** It is needed only for dashboard tab 5 (trailer reactions). Without it, everything else works, including the decision.
+
+Tested on Windows 11. **TODO after the clean-run test:** how long the first run takes.
+
+### Steps
+
+1. Download the repository:
+   ```bash
+   git clone https://github.com/Daria-Baranova/metro-stalker-analytics.git
+   cd metro-stalker-analytics
+   ```
+2. Copy `.env.example` to `.env` and fill in the values:
    - `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`: any values;
    - `SUPERSET_SECRET_KEY`: a long random string;
    - `SUPERSET_ADMIN_PASSWORD`: make up a password; you will use it to log in to the dashboard;
    - `HASH_SALT`: a random string (Steam IDs are stored only as hashes);
-   - `YOUTUBE_API_KEY`: optional.
-2. Start the database and Superset:
+   - `YOUTUBE_API_KEY`: optional, see [How to get a YouTube key](#how-to-get-a-youtube-key). Leave it empty to skip YouTube.
+3. Start the database and Superset:
    ```bash
    docker compose up -d
    ```
-3. Install the Python packages in a virtual environment (for example, `python -m venv .venv` and activate it):
+4. Install the Python packages in a virtual environment:
+   ```bash
+   python -m venv .venv
+   ```
+   Activate it: `.venv\Scripts\activate` on Windows, `source .venv/bin/activate` on macOS or Linux. Then:
    ```bash
    pip install -r requirements.txt
    ```
-4. Run the whole pipeline:
+5. Run the whole pipeline:
    ```bash
    python run_all.py
    ```
-5. Open the dashboard. It runs **on your own computer**: open http://localhost:8089 in a browser and log in.
+6. Open the dashboard. It runs **on your own computer**: open http://localhost:8089 in a browser and log in.
    - Username: `admin`
    - Password: the one you wrote in `.env` on the `SUPERSET_ADMIN_PASSWORD` line.
 
-**TODO after the clean-run test:** how long the first run takes; what happens without a YouTube key.
+**Without a YouTube key,** `run_all.py` prints a warning and skips the YouTube and VADER steps, and dbt skips the 4 comment models and their tests. The decision and dashboard tabs 1–4 and 6 work as usual. The two charts on tab 5 show an error because their tables do not exist.
 
 **Reference result:** compare your run with [results/decision_table.csv](results/decision_table.csv). Small differences are possible: Steam deletes and edits reviews.
+
+### How to get a YouTube key
+
+The key is free, and each person uses their own. Never commit `.env` to Git (it is already in `.gitignore`).
+
+1. Sign in to [Google Cloud Console](https://console.cloud.google.com/) with a Google account.
+2. Create a new project.
+3. Open **APIs & Services → Library**, find **YouTube Data API v3** and click **Enable**.
+4. Open **APIs & Services → Credentials → Create credentials → API key**.
+5. Recommended: edit the key and under **API restrictions** allow only **YouTube Data API v3**.
+6. Paste the key into `.env`: `YOUTUBE_API_KEY=your_key`.
+
+One run uses about 100 of the 10,000 free daily quota units (about 9,300 comments, 100 per request).
 
 ## Repository
 

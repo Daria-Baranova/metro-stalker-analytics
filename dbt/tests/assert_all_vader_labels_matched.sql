@@ -1,3 +1,5 @@
+{{ config(severity='warn') }}
+
 select labels.comment_id
 from {{ ref('vader_labels') }} as labels
 left join {{ ref('stg_comment_sentiment') }} as sentiment
